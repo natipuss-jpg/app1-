@@ -1,0 +1,40 @@
+{
+  "name": "coc-prep",
+  "productName": "COC Prep",
+  "version": "1.0.0",
+  "description": "COC Preparation Note & Questions",
+  "author": "COC Prep",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win --publish never"
+  },
+  "devDependencies": {
+    "electron": "22.3.27",
+    "electron-builder": "24.13.3"
+  },
+  "build": {
+    "appId": "com.cocprep.desktop",
+    "productName": "COC Prep",
+    "directories": { "output": "dist", "buildResources": "build" },
+    "files": [ "main.js", "offline.html", "package.json", "build/icon.png" ],
+    "win": {
+      "icon": "build/icon.ico",
+      "target": [
+        { "target": "nsis", "arch": [ "x64", "ia32" ] },
+        { "target": "portable", "arch": [ "x64" ] }
+      ]
+    },
+    "nsis": {
+      "artifactName": "COC-Prep-Setup.${ext}",
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    },
+    "portable": {
+      "artifactName": "COC-Prep-Portable.${ext}"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>COC Prep</title>
+<style>
+  html,body{height:100%;margin:0}
+  body{display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;box-sizing:border-box;
+       font-family:'Segoe UI',system-ui,Arial,sans-serif;background:linear-gradient(135deg,#3b5bf0,#7b5cf0);color:#fff}
+  .card{background:#fff;color:#1f2430;border-radius:22px;padding:32px 24px;max-width:380px;width:100%;box-shadow:0 24px 60px rgba(15,15,70,.35)}
+  .ico{font-size:52px}
+  h1{font-size:21px;margin:10px 0 6px}
+  p{margin:0 0 18px;color:#5b6272;line-height:1.5;font-size:15px}
+  button{width:100%;padding:14px;border:none;border-radius:14px;background:linear-gradient(135deg,#4a6cf7,#6a4cf0);
+         color:#fff;font-size:16px;font-weight:700;font-family:inherit;cursor:pointer}
+</style></head>
+<body><div class="card">
+  <div class="ico">&#128244;</div>
+  <h1>No internet connection</h1>
+  <p>Please connect to Wi-Fi or turn on mobile data, then try again.<br>ኢንተርኔት የለም። እባክዎ ኢንተርኔት ከፍተው እንደገና ይሞክሩ።</p>
+  <button type="button" id="b">Try again / እንደገና ሞክር</button>
+</div>
+<script>
+  var u = '';
+  try { u = new URLSearchParams(location.search).get('u') || ''; } catch (e) {}
+  document.getElementById('b').addEventListener('click', function () { if (u) { location.href = u; } });
+</script>
+</body></html>
